@@ -39,5 +39,5 @@ class SubscriptionListView(ListView):
 
     def get_queryset(self):
         projects = Subscription.objects.filter(user=self.request.user).values_list('project')
-        article_list = Article.objects.filter(projects__in=projects)
+        article_list = Article.objects.filter(project__in=projects)
         return article_list
