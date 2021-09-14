@@ -20,7 +20,7 @@ has_ownership = [account_ownership_required, login_required()]
 class AccountCreateView(CreateView):
     model = User
     form_class = UserCreationForm
-    success_url = reverse_lazy('accountapp:hello_world') #리버스는 클래스에선 사용불가
+    success_url = reverse_lazy('home') #리버스는 클래스에선 사용불가
     template_name = 'accountapp/create.html'
 
 class AccountDetailView(DetailView, MultipleObjectMixin):
